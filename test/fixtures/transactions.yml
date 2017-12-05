@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numcuenta: 1
+  deposito: 1.5
+  retiro: 1.5
+  saldo: 1.5
+
+two:
+  numcuenta: 1
+  deposito: 1.5
+  retiro: 1.5
+  saldo: 1.5
