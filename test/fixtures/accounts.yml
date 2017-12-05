@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numtarjeta: MyString
+  tipotarjeta: 1
+  saldo: 1.5
+
+two:
+  numtarjeta: MyString
+  tipotarjeta: 1
+  saldo: 1.5

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  montominimo: 1.5
+  montomaximo: 1.5
+  porcentaje: 1.5
+  tasafija: 1.5
+  descripcion: 1.5
+
+two:
+  montominimo: 1.5
+  montomaximo: 1.5
+  porcentaje: 1.5
+  tasafija: 1.5
+  descripcion: 1.5
