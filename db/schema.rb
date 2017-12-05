@@ -10,11 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205040625) do
+ActiveRecord::Schema.define(version: 20171205042138) do
+
+  create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "numtarjeta"
+    t.integer "tipotarjeta"
+    t.float "saldo", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "numtarjeta"
+    t.integer "tipotarjeta"
+    t.float "saldo", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.float "montominimo", limit: 24
+    t.float "montomaximo", limit: 24
+    t.float "porcentaje", limit: 24
+    t.float "tasafija", limit: 24
+    t.float "descripcion", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nombre"
     t.integer "numcuenta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer "numcuenta"
+    t.float "deposito", limit: 24
+    t.float "retiro", limit: 24
+    t.float "saldo", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wallets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer "numcuenta"
+    t.float "fondo", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
