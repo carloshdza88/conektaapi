@@ -2,9 +2,9 @@
 
 ##API 04 / 12 / 2017 
 
-### Consultar Wallets
+## Consultar Wallets
 
-  ###GET Orden[/api/v1/wallets] 
+  ##GET Orden[/api/v1/wallets] 
 
   Parametros: Sin parametros.
 
@@ -24,9 +24,9 @@
         ]
     }
 
- ### Crear un Wallet
+ ## Crear un Wallet
 
-  ###POST Orden[/api/v1/wallets] 
+  ##POST Orden[/api/v1/wallets] 
 
   Parametros: 
            nombrecliente: (string),
@@ -66,17 +66,5 @@
 
  
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
