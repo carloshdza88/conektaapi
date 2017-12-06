@@ -5,9 +5,9 @@
 
   ### GET Orden[/api/v1/wallets] 
 
-  Parametros: Sin parametros.
+  * Parametros: Sin parametros.
 
-  Respuesta:  
+  * Respuesta:  
 
     {
         "status":"succes",
@@ -27,16 +27,17 @@
 
   ### POST Orden[/api/v1/wallets] 
 
-  Parametros: 
-           nombrecliente: (string),
+ * Parametros: 
+  
+           nombrecliente: (string)
 
-           numerotarjeta: (string),
+           numerotarjeta: (string)
 
-           tipotarjeta: (integer),
+           tipotarjeta: (integer)
 
            fondo: (float)
 
-  Respuesta:  
+ * Respuesta:  
 
         {
                 "status": "Succes.",
@@ -63,6 +64,25 @@
                 }
         }
 
+
+ ### Realizar un envío de dinero a otro wallet
+
+  ### POST Orden[/api/v1/transacctions] 
+
+  * Parametros
+
+           numcuentaorigen: (integer)
+
+           numcuentadestino: (integer)
+
+           monto: (integer)
+ 
+  * Respuesta 
+
+  {
+    "status": "succes",
+    "message": "Se realizo el envío existosamente de 100 de la cuenta 10001 a la cuenta 10002"
+  }
  
 
 
