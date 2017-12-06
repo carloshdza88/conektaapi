@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205042138) do
+ActiveRecord::Schema.define(version: 20171206005439) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "numtarjeta"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20171205042138) do
     t.float "deposito", limit: 24
     t.float "retiro", limit: 24
     t.float "saldo", limit: 24
+    t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

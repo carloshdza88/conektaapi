@@ -5,9 +5,11 @@ one:
   deposito: 1.5
   retiro: 1.5
   saldo: 1.5
+  descripcion: MyString
 
 two:
   numcuenta: 1
   deposito: 1.5
   retiro: 1.5
   saldo: 1.5
+  descripcion: MyString

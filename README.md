@@ -9,19 +9,17 @@
 
   * Respuesta:  
 
-    {
-        "status":"succes",
-        "message":"show wallets",
-        "data":[
-            {
-                "id":1,
-                "numcuenta":10001,
-                "fondo":400.5,
-                "created_at":"2017-12-05T00:44:39.000Z",
-                "updated_at":"2017-12-05T00:44:45.000Z"
-            }
-        ]
-    }
+     {
+          "status":"succes",
+          "message":"show wallets",
+          "data":[{
+                    "id":1,
+                    "numcuenta":10001,
+                    "fondo":400.5,
+                    "created_at":"2017-12-05T00:44:39.000Z",
+                    "updated_at":"2017-12-05T00:44:45.000Z"
+                 }]
+     }
 
  ### Crear un Wallet
 
@@ -79,10 +77,10 @@
  
   * Respuesta 
 
-  {
-    "status": "succes",
-    "message": "Se realizo el envío existosamente de 100 de la cuenta 10001 a la cuenta 10002"
-  }
+         {
+                "status": "succes",
+                "message": "Se realizo el envío existosamente de 100 de la cuenta 10001 a la cuenta 10002"
+         }
  
 
 
