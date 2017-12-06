@@ -61,11 +61,15 @@ module Api
 
                     #Agregar el movimiento  a el historico de transacciones.
 
+                    
+
                     Transaction.create(numcuenta: nuevo_cliente.numcuenta , 
                                        deposito: wallet_actual.fondo,
-                                       retiro: 0, saldo: wallet_actual.fondo)
+                                       retiro: 0, saldo: wallet_actual.fondo,
+                                       descripcion: 'Se creo cuenta con: ' + wallet_actual.fondo.to_s + ' de saldo inicial')
+                                                         
                     
-                    render json: { status: 'Succes.' , message: 'wallet and customer created', data: wallet_actual ,  cliente: nuevo_cliente , gateway: obj_json }, status: :ok                
+                    render json: { status: 'Succes.' , message: 'El cliente y el wallet han sido creados', data: wallet_actual ,  cliente: nuevo_cliente , gateway: obj_json }, status: :ok                
          
                 else
                     render json: { status: 'Not succes.' , message: 'Error '  }, status: :ok                   
