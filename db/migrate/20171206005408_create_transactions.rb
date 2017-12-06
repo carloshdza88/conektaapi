@@ -5,6 +5,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.float :deposito
       t.float :retiro
       t.float :saldo
+      t.string :descripcion
 
       t.timestamps
     end
