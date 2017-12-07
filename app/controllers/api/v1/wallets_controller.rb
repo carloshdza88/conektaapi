@@ -4,12 +4,28 @@ module Api
         
 
             def index
-                
-               
+
                 wallets = Wallet.all
 
-                render json: { status: 'succes', message: 'show wallets' , data: wallets } ,status: :ok
+                render json: { status: 'succes', message: 'show wallets' , data: wallets , parametro: params[:algo] } ,status: :ok
+            end
 
+            def show
+
+                wallets = Wallet.find_by(numcuenta: params[:id])
+               # wallets = wallets.first
+
+               if wallets.present?
+                
+                  render json: { status: 'succes', message: 'Datos del Wallet' , data: wallets  } ,status: :ok
+                
+               else
+                  render json: { status: 'denied', message: 'El wallet no existe' } ,status: :ok
+                
+               end
+
+
+                 
             end
             
             def create
