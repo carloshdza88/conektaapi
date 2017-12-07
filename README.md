@@ -9,17 +9,43 @@
 
   * Respuesta:  
 
-     {
-          "status":"succes",
-          "message":"show wallets",
-          "data":[{
-                    "id":1,
-                    "numcuenta":10001,
-                    "fondo":400.5,
-                    "created_at":"2017-12-05T00:44:39.000Z",
-                    "updated_at":"2017-12-05T00:44:45.000Z"
-                 }]
-     }
+
+        {
+                "status":"succes",
+                "message":"show wallets",
+                "data":[{
+                        "id":1,
+                        "numcuenta":10001,
+                        "fondo":400.5,
+                        "created_at":"2017-12-05T00:44:39.000Z",
+                        "updated_at":"2017-12-05T00:44:45.000Z"
+                        }]
+        }
+
+
+ ### Revisar saldo del Wallet (Balance)
+
+  ### GET Orden[/api/v1/id]
+
+ * Parametros: 
+        
+          id (integer) -> número de cuenta
+
+ * Respuesta: 
+
+        {
+                "status": "succes",
+                "message": "Datos del Wallet",
+                "data": {
+                        "id": 1,
+                        "numcuenta": 10004,
+                        "fondo": 21542.2,
+                        "created_at": "2017-12-06T01:48:48.000Z",
+                        "updated_at": "2017-12-06T01:48:49.000Z"
+                }
+        }
+
+
 
  ### Crear un Wallet
 
