@@ -25,7 +25,7 @@
 
  ### Revisar saldo del Wallet (Balance)
 
-  ### GET Orden[/api/v1/id]
+  ### GET Orden[/api/v1/wallets/id]
 
  * Parametros: 
         
