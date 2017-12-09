@@ -5,11 +5,11 @@ one:
   montomaximo: 1.5
   porcentaje: 1.5
   tasafija: 1.5
-  descripcion: 1.5
+  descripcion: MyString
 
 two:
   montominimo: 1.5
   montomaximo: 1.5
   porcentaje: 1.5
   tasafija: 1.5
-  descripcion: 1.5
+  descripcion: MyString

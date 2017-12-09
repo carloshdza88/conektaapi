@@ -5,7 +5,7 @@ class CreateCommissions < ActiveRecord::Migration[5.1]
       t.float :montomaximo
       t.float :porcentaje
       t.float :tasafija
-      t.float :descripcion
+      t.string :descripcion
 
       t.timestamps
     end

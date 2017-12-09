@@ -24,11 +24,23 @@ module Api
              #Verificar si existe el wallet de origen
              if wallet_origen.present?
 
-              #  render json: { data: wallet_origen , fondo: wallet_origen.fondo}
+                #render json: { data: wallet_origen , fondo: wallet_origen.fondo}
 
                
                 #Verificar si existe el wallet destino
                 if wallet_destino.present?
+
+                    #Calcular la comisión para descontarla del monto
+
+                    comisiones = Commission.where("? >= montominimo and ( ? <= montomaximo  or montomaximo=null)",
+                                            params[:monto].to_f,params[:monto].to_f)
+
+                    comisiones = comisiones.first
+
+                    #Se calcula el descuento.
+                    cantidad = params[:monto].to_f -
+                               (params[:monto].to_f * comisiones.porcentaje.to_f / 100) - 
+                               comisiones.tasafija.to_f
 
                     wallet_origen = wallet_origen.first
                     wallet_destino = wallet_destino.first
@@ -38,22 +50,22 @@ module Api
                         # Registrar el retiro de la cuenta origen
                         Transaction.create(numcuenta: params[:numcuentaorigen] , 
                                             deposito: 0 , 
-                                            retiro: params[:monto] ,
-                                             saldo: wallet_origen.fondo - params[:monto].to_f , 
+                                            retiro: cantidad ,
+                                             saldo: wallet_origen.fondo - cantidad , 
                                        descripcion: 'Se retira ' + 
-                                      params[:monto].to_s + ' para la transacción')
+                                       cantidad.to_s + ' para la transacción')
 
                             # Registrar el deposito en la cuenta destino                   
                         Transaction.create(numcuenta: params[:numcuentadestino] , 
-                                            deposito: params[:monto] , 
+                                            deposito: cantidad , 
                                               retiro: 0 ,
-                                               saldo: wallet_destino.fondo + params[:monto].to_f , 
-                                         descripcion: 'Se recibe ' + params[:monto].to_s + ' en la cuenta')
+                                               saldo: wallet_destino.fondo + cantidad.to_f , 
+                                         descripcion: 'Se recibe ' + cantidad.to_s + ' en la cuenta')
 
 
                             render json: { status: 'succes' , 
                                 message: 'Se realizo el envío existosamente de ' + 
-                                            params[:monto] + ' de la cuenta ' + 
+                                            cantidad.to_s + ' de la cuenta ' + 
                                             params[:numcuentaorigen].to_s + ' a la cuenta ' + 
                                             params[:numcuentadestino].to_s }, status: :ok  
                                         
